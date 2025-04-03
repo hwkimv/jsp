@@ -27,4 +27,7 @@ public class Book implements Serializable {
         this.name = name;
         this.unitPrice = unitPrice;
     }
+
+    public Book() {
+    }
 }

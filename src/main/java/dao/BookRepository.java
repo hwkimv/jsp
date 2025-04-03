@@ -1,12 +1,15 @@
 package dao;
 
 import dto.Book;
+import lombok.Getter;
 
 import java.util.ArrayList;
 
 public class BookRepository {
 
     private ArrayList<Book> listOfBooks = new ArrayList<Book>();
+    @Getter
+    private static BookRepository instance = new BookRepository();
 
     public BookRepository() {
         Book book1 = new Book("ISBN1234", "C# 프로그래밍", 27000);
@@ -37,6 +40,7 @@ public class BookRepository {
         listOfBooks.add(book2);
         listOfBooks.add(book3);
     }
+
     public ArrayList<Book> getAllBooks() {
         return listOfBooks;
     }
@@ -53,4 +57,8 @@ public class BookRepository {
         return bookById;
     }
 
+    public void addBook(Book book) {
+        System.out.println("도서 등록됨: " + book.getName());
+        listOfBooks.add(book);
+    }
 }
