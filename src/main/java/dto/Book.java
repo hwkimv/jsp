@@ -21,6 +21,7 @@ public class Book implements Serializable {
     private long unitsInStock;
     private String releaseDate;
     private String condition;
+    private String filename;
 
     public Book(String bookId, String name, Integer unitPrice) {
         this.bookId = bookId;
